@@ -100,7 +100,7 @@ export default function HomeClient() {
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-10 max-w-2xl text-center text-base leading-8 text-neutral-600 md:text-xl md:leading-9"
+            className="mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-neutral-600 md:text-base md:leading-8"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -337,7 +337,7 @@ export default function HomeClient() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-neutral-600 md:text-lg">
-         작업, 협업, 포트폴리오 관련 문의는 언제든 편하게 연락은 주세요.
+          작업, 협업, 포트폴리오 관련 문의는 언제든 편하게 연락은 주세요.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
