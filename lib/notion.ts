@@ -26,11 +26,13 @@ function getFiles(prop: any) {
   if (!prop || prop.type !== "files") return [];
 
   return (
-    prop.files?.map((file: any) => {
-      if (file.type === "file") return file.file?.url || "";
-      if (file.type === "external") return file.external?.url || "";
-      return "";
-    }).filter(Boolean) || []
+    prop.files
+      ?.map((file: any) => {
+        if (file.type === "file") return file.file?.url || "";
+        if (file.type === "external") return file.external?.url || "";
+        return "";
+      })
+      .filter(Boolean) || []
   );
 }
 
@@ -67,6 +69,12 @@ export async function getProjects() {
   try {
     const response = await notion.dataSources.query({
       data_source_id: process.env.NOTION_DATA_SOURCE_ID!,
+      sorts: [
+        {
+          property: "Slug",
+          direction: "descending",
+        },
+      ],
     });
 
     return response.results.map((page: any) => mapProject(page));
