@@ -63,7 +63,6 @@ export default function AboutPage() {
               Marketing Designer
             </p>
 
-            {/* 🔥 여기만 수정됨 */}
             <h1 className="mt-4 text-[28px] font-semibold leading-[1.15] tracking-tight sm:text-[34px] md:text-6xl">
               작은 디테일이 만드는 감정과
               <br />
@@ -144,12 +143,85 @@ export default function AboutPage() {
               {tools.map((tool) => (
                 <div
                   key={tool}
-                  className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700"
+                  className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-400 hover:bg-neutral-50 hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)]"
                 >
                   {tool}
                 </div>
               ))}
             </div>
+
+            <div className="mt-10 border-t border-neutral-200 pt-8">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
+                Working Style
+              </p>
+              <p className="mt-4 text-sm leading-7 text-neutral-600 md:text-base">
+                빠르게 방향을 잡고, 여러 시안을 비교하면서 가장 설득력 있는 결과를 찾는 방식을 선호합니다. 디테일 수정도 꼼꼼하게 보는 편입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
+        <div className="mb-10">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
+            Process
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
+            How I work
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {process.map((item) => (
+            <div
+              key={item.step}
+              className="rounded-[30px] border border-neutral-200 bg-white/90 p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+            >
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-400">
+                {item.step}
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-neutral-600 md:text-base">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 pb-20 text-center md:px-10 md:pb-28">
+        <div className="rounded-[34px] border border-neutral-200 bg-white/90 px-8 py-14 shadow-[0_10px_40px_rgba(0,0,0,0.05)] md:px-12 md:py-16">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
+            Contact
+          </p>
+
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
+            Let’s make something
+            <br />
+            meaningful together
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-neutral-600 md:text-lg">
+            작업, 협업, 포트폴리오 관련 문의는 언제든 편하게 연락은 주세요.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="mailto:hyoooddy@gmail.com"
+              className="rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition hover:bg-neutral-800"
+            >
+              Send Email
+            </a>
+
+            <Link
+              href="/"
+              className="rounded-full border border-neutral-300 bg-white px-7 py-3.5 text-sm font-medium text-neutral-900 transition hover:border-neutral-400 hover:bg-neutral-50"
+            >
+              View Home
+            </Link>
           </div>
         </div>
       </section>
